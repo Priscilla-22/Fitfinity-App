@@ -11,14 +11,11 @@ const ImageSlider = () => {
     fetchExerciseImages();
   }, []);
 
-  const fetchExerciseImages = async () => {
-    try {
-      const response = await fetch('http://localhost:3000/exerciseImageSet');
-      const data = await response.json();
-      setExerciseImages(data);
-    } catch (error) {
-      console.error('Error fetching exercise images:', error);
-    }
+  const fetchExerciseImages = () => {
+    fetch('http://localhost:3000/exerciseImageSet')
+      .then((r) => r.json())
+      .then((data) => setExerciseImages(data))
+      .catch((err) => console.error('Error fetching exercise images:', err));
   };
 
   const settings = {
@@ -35,7 +32,17 @@ const ImageSlider = () => {
     <div className='max-w-screen-xl mx-auto'>
       <Slider {...settings}>
         {exerciseImages.map((image) => (
-          <div key={image.id} className='px-4 py-2'>
+          <div key={image.id} className='slider-item'>
+            <div className='slider-description'>
+              {image.description.split(' ').map((word, index) => (
+                <span
+                  key={index}
+                  className={index % 2 === 0 ? 'white' : 'orange'}
+                >
+                  {word}{' '}
+                </span>
+              ))}
+            </div>
             <img
               src={image.url}
               alt={image.description}

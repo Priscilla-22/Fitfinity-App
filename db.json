@@ -368,6 +368,13 @@
       "user_id": 1,
       "url": "https://ik.imagekit.io/iqaynsdav/pexels-ketut-subiyanto-4720766.jpg?updatedAt=1707881879413",
       "description": "Running in the rain, loving the challenge"
+    },
+    {
+      "id": 16,
+      "workout_id": 1,
+      "user_id": 1,
+      "url": "https://ik.imagekit.io/iqaynsdav/pexels-cottonbro-studio-4753996.jpg?updatedAt=1707881884134",
+      "description": "Running through scenic trails"
     }
   ]
 }

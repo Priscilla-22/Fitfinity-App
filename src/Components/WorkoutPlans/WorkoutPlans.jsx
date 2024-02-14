@@ -13,57 +13,75 @@ const WorkoutPlan = ({ workoutPlan }) => {
         src={workoutPlan.gifUrl}
         alt={workoutPlan.name}
         className='mb-2'
-        style={{ maxWidth: '200px' }}
-      />{' '}
-      {/* Adjust max-width here */}
+        style={{ maxWidth: '300px' }}
+      />
       <div className='mb-2'>
         <h2 className='text-2xl font-bold'>{workoutPlan.name.toUpperCase()}</h2>{' '}
-        {/* Convert name to uppercase */}
         <p className='text-gray-600'>
           Difficulty:{' '}
           <span className='font-bold'>{workoutPlan.difficulty}</span>
         </p>
-      </div>
-      {!expanded && (
-        <button
+        <div
+          className='text-center mt-2'
           onClick={toggleExpanded}
-          className='absolute bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600'
+          style={{ cursor: 'pointer', color: '#f04c0c', fontSize: '1.1rem' }}
         >
-          Learn More
-        </button>
-      )}
+          Learn More ➔
+        </div>
+      </div>
       {expanded && (
         <div>
-          <p className='text-gray-600'>
-            Body Part: <span className='font-bold'>{workoutPlan.bodyPart}</span>
-          </p>
-          <p className='text-gray-600'>
-            Equipment:{' '}
-            <span className='font-bold'>{workoutPlan.equipment}</span>
-          </p>
-          <p className='text-gray-600'>
-            Target: <span className='font-bold'>{workoutPlan.target}</span>
-          </p>
-          <p className='text-gray-600'>
-            Secondary Muscles:{' '}
-            <span className='font-bold'>
-              {workoutPlan.secondaryMuscles &&
-                workoutPlan.secondaryMuscles.join(', ')}
-            </span>
-          </p>
-          <h3 className='text-xl font-bold mt-2'>Instructions:</h3>
-          <ul className='list-disc list-inside text-gray-600'>
-            {Array.isArray(workoutPlan.instructions) &&
-              workoutPlan.instructions.map((instruction, index) => (
-                <li key={index}>{instruction}</li>
-              ))}
-          </ul>
-          <button
+          {workoutPlan.type && (
+            <p className='text-gray-600'>
+              Type: <span className='font-bold'>{workoutPlan.type}</span>
+            </p>
+          )}
+          {workoutPlan.muscle && (
+            <p className='text-gray-600'>
+              Muscle: <span className='font-bold'>{workoutPlan.muscle}</span>
+            </p>
+          )}
+          {workoutPlan.bodyPart && (
+            <p className='text-gray-600'>
+              Body Part:{' '}
+              <span className='font-bold'>{workoutPlan.bodyPart}</span>
+            </p>
+          )}
+          {workoutPlan.equipment && (
+            <p className='text-gray-600'>
+              Equipment:{' '}
+              <span className='font-bold'>{workoutPlan.equipment}</span>
+            </p>
+          )}
+          {workoutPlan.target && (
+            <p className='text-gray-600'>
+              Target: <span className='font-bold'>{workoutPlan.target}</span>
+            </p>
+          )}
+          {workoutPlan.secondaryMuscles && (
+            <p className='text-gray-600'>
+              Secondary Muscles:{' '}
+              <span className='font-bold'>
+                {workoutPlan.secondaryMuscles.join(', ')}
+              </span>
+            </p>
+          )}
+          {Array.isArray(workoutPlan.instructions) && (
+            <>
+              <h3 className='text-xl font-bold mt-2'>Instructions:</h3>
+              <ul className='list-disc list-inside text-gray-600'>
+                {workoutPlan.instructions.map((instruction, index) => (
+                  <li key={index}>{instruction}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          <div
             onClick={toggleExpanded}
-            className='mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600'
+            className='mt-2 text-center text-blue-500 cursor-pointer hover:underline'
           >
             Close
-          </button>
+          </div>
         </div>
       )}
     </div>

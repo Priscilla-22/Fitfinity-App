@@ -9,9 +9,16 @@ const WorkoutPlan = ({ workoutPlan }) => {
 
   return (
     <div className='bg-white shadow-[0_35px_60px_-15px_rgba(1.0,1.0,1.0,1.3)] rounded-lg p-4 mb-4 relative'>
-      <img src={workoutPlan.gifUrl} alt={workoutPlan.name} className='mb-2' />
+      <img
+        src={workoutPlan.gifUrl}
+        alt={workoutPlan.name}
+        className='mb-2'
+        style={{ maxWidth: '200px' }}
+      />{' '}
+      {/* Adjust max-width here */}
       <div className='mb-2'>
-        <h2 className='text-2xl font-bold'>{workoutPlan.name}</h2>
+        <h2 className='text-2xl font-bold'>{workoutPlan.name.toUpperCase()}</h2>{' '}
+        {/* Convert name to uppercase */}
         <p className='text-gray-600'>
           Difficulty:{' '}
           <span className='font-bold'>{workoutPlan.difficulty}</span>

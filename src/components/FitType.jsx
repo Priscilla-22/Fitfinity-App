@@ -1,40 +1,43 @@
 import React, { useEffect, useState } from "react";
 import YouTubeVideo from "./YouTubeVideo";
 
-
 function FitType() {
-    const [selectedType, setSelectedType] = useState("");
-    const [displayArticle, setDisplayArticle] = useState(null); 
-    const [selectedResource, setSelectedResource] = useState("");
+  const [selectedType, setSelectedType] = useState("");
+  const [displayArticle, setDisplayArticle] = useState(null);
+  const [selectedResource, setSelectedResource] = useState("");
 
-    function handleClick() {
-        const desiredURL = "https://www.healthline.com/nutrition";
-        window.location.href = desiredURL;
-      }
+  function handleClick() {
+    const desiredURL = "https://www.healthline.com/nutrition";
+    window.location.href = desiredURL;
+  }
 
-      function handleResourceClick(resource) {
-        setSelectedResource(resource);
-        setSelectedType(resource);
-      }
+  function handleResourceClick(resource) {
+    setSelectedResource(resource);
+    setSelectedType(resource);
+  }
 
-      useEffect(() => {
-        fetch("https://articles-jlcz.onrender.com/Articles")
-          .then((resp) => resp.json())
-          .then((data) => {
-            setDisplayArticle(data);
-          })
-          .catch((error) => console.error("Error fetching data:", error));
-      }, []); 
-      const selectedArticle = displayArticle
+  const handleChange = (event) => {
+    setSelectedType(event.target.value);
+  };
+
+  useEffect(() => {
+    fetch("")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setDisplayArticle(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+  const selectedArticle = displayArticle
     ? displayArticle.find((article) => article.Title === selectedType)
     : null;
 
   function handleGoBack() {
-    setSelectedType(""); 
+    setSelectedType("");
   }
 
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }, [selectedType]);
 
   return (
@@ -149,8 +152,6 @@ function FitType() {
         </div>
       </div>
     </>
-    );
-
-
+  );
 }
 export default FitType;

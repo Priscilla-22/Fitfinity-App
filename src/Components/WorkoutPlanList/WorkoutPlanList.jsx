@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import WorkoutPlan from '../WorkoutPlans/WorkoutPlans';
-import SortFilterBar from '../FilterBar/FilterBar';
+import FilterBar from '../FilterBar/FilterBar';
 
 const WorkoutPlanList = () => {
   const [workoutPlans, setWorkoutPlans] = useState([]);
@@ -60,7 +60,7 @@ const WorkoutPlanList = () => {
 
   return (
     <div className='max-w-screen-xl mx-auto'>
-      <SortFilterBar
+      <FilterBar
         onFilterChange={handleFilterChange}
         workoutPlanNames={workoutPlans.map((plan) => plan.name)}
       />

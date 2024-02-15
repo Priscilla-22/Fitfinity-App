@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SortFilterBar = ({ onFilterChange, workoutPlanNames }) => {
+const FilterBar = ({ onFilterChange, workoutPlanNames }) => {
   const [filters, setFilters] = useState({
     difficulty: [],
     bodyPart: [],
@@ -184,4 +184,4 @@ const SortFilterBar = ({ onFilterChange, workoutPlanNames }) => {
   );
 };
 
-export default SortFilterBar;
+export default FilterBar;

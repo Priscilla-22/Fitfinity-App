@@ -5,10 +5,11 @@ import './index.css';
 
 const App = () => {
   return (
-    <div>
+    <div style = {{marginLeft:"75%"}}>
       <h1>Reminders!</h1>
       <Reminder />
     </div>
+ 
   );
 };
 

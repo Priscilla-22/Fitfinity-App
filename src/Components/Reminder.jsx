@@ -8,11 +8,14 @@ const Reminder = () => {
   };
 
   return (
-    <div>
+  
+    <div style = {{marginLeft:"10%"}}>
+
       <button className="reminder-button" onClick={showReminder}> Click here!
 
       </button>
     </div>
+  
   );
 };
 

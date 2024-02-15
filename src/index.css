@@ -1,0 +1,19 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f04c0c;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+.reminder-button {
+  background-color: pink;
+  color: blue;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+

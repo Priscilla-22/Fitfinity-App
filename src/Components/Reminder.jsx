@@ -9,7 +9,9 @@ const Reminder = () => {
 
   return (
     <div>
-      <button onClick={showReminder}>Show Reminder</button>
+      <button className="reminder-button" onClick={showReminder}> Click here!
+
+      </button>
     </div>
   );
 };

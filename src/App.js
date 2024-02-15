@@ -1,10 +1,12 @@
 import React from 'react';
 import Reminder from './Components/Reminder.jsx'
+import './index.css'; 
+
 
 const App = () => {
   return (
     <div>
-      <h1>Fitness App</h1>
+      <h1>Reminders!</h1>
       <Reminder />
     </div>
   );

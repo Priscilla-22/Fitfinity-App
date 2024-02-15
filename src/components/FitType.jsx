@@ -23,7 +23,14 @@ function FitType() {
             setDisplayArticle(data);
           })
           .catch((error) => console.error("Error fetching data:", error));
-      }, []); // Empty dependency array to fetch data only once
+      }, []); 
+      const selectedArticle = displayArticle
+    ? displayArticle.find((article) => article.Title === selectedType)
+    : null;
+
+  function handleGoBack() {
+    setSelectedType(""); 
+  }
 
 }
 export default FitType;

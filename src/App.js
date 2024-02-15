@@ -1,7 +1,12 @@
 import React from 'react';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import FitType from './components/FitType.jsx';
+
+
 import Reminder from './Components/Reminder.jsx'
 import './index.css'; 
+
 
 
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -60,8 +65,17 @@ import ExerciseTracker from './components/ExerciseTracker';
 function App() {
   return (
     <div className="App">
+
+       <Router>
+      <Routes>
+        <Route path="/" element={<FitType />} />
+      </Routes>
+    </Router>
+     
+
       <ProgressTracker />
       <ExerciseTracker />
+
     </div>
     
 

@@ -16,7 +16,7 @@ const WorkoutPlan = ({ workoutPlan }) => {
         style={{ maxWidth: '300px' }}
       />
       <div className='mb-2'>
-        <h2 className='text-2xl font-bold'>{workoutPlan.name.toUpperCase()}</h2>{' '}
+        <h2 className='text-2xl font-bold'>{workoutPlan.name.toUpperCase()}</h2>
         <p className='text-gray-600'>
           Difficulty:{' '}
           <span className='font-bold'>{workoutPlan.difficulty}</span>
@@ -53,35 +53,14 @@ const WorkoutPlan = ({ workoutPlan }) => {
               <span className='font-bold'>{workoutPlan.equipment}</span>
             </p>
           )}
-          {workoutPlan.target && (
-            <p className='text-gray-600'>
-              Target: <span className='font-bold'>{workoutPlan.target}</span>
-            </p>
-          )}
-          {workoutPlan.secondaryMuscles && (
-            <p className='text-gray-600'>
-              Secondary Muscles:{' '}
-              <span className='font-bold'>
-                {workoutPlan.secondaryMuscles.join(', ')}
-              </span>
-            </p>
-          )}
-          {Array.isArray(workoutPlan.instructions) && (
-            <>
-              <h3 className='text-xl font-bold mt-2'>Instructions:</h3>
-              <ul className='list-disc list-inside text-gray-600'>
-                {workoutPlan.instructions.map((instruction, index) => (
-                  <li key={index}>{instruction}</li>
-                ))}
-              </ul>
-            </>
-          )}
-          <div
-            onClick={toggleExpanded}
-            className='mt-2 text-center text-blue-500 cursor-pointer hover:underline'
-          >
-            Close
-          </div>
+          <h3 className='text-lg font-semibold mt-2'>Instructions:</h3>
+          <ul className='list-disc pl-6'>
+            {workoutPlan.instructions.map((instruction, index) => (
+              <li key={index} className='text-gray-700'>
+                {instruction}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

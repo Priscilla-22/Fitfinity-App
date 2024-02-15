@@ -11,5 +11,10 @@ function FitType() {
         window.location.href = desiredURL;
       }
 
+      function handleResourceClick(resource) {
+        setSelectedResource(resource);
+        setSelectedType(resource);
+      }
+
 }
 export default FitType;

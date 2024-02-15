@@ -1,0 +1,33 @@
+.slider-item {
+    position: relative;
+}
+
+.slider-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    background-color: #494848;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+.slider-description span {
+    font-size: 15px;
+}
+
+.white {
+    color: white;
+}
+
+.orange {
+    color: #fd6500f6;
+}
+
+.slider-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}

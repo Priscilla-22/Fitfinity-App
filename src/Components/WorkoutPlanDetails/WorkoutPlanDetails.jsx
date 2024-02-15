@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const WorkoutPlanDetails = () => {
   const { id } = useParams();
   const [workoutPlan, setWorkoutPlan] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:3000/workoutPlans/${id}`)
@@ -30,43 +31,55 @@ const WorkoutPlanDetails = () => {
           <h2 className='text-2xl font-bold'>
             {workoutPlan.name.toUpperCase()}
           </h2>
-          <p className='text-gray-600'>
+          <p className='text-gray-600' style={{ fontSize: '18px' }}>
             Difficulty:{' '}
-            <span className='font-bold'>{workoutPlan.difficulty}</span>
+            <span className='font-bold ml-1'>{workoutPlan.difficulty}</span>
           </p>
-          <p className='text-gray-600'>
-            Body Part: <span className='font-bold'>{workoutPlan.bodyPart}</span>
+          <p className='text-gray-600' style={{ fontSize: '18px' }}>
+            Body Part:{' '}
+            <span className='font-bold ml-1'>{workoutPlan.bodyPart}</span>
           </p>
-          <p className='text-gray-600'>
+          <p className='text-gray-600' style={{ fontSize: '18px' }}>
             Equipment:{' '}
-            <span className='font-bold'>{workoutPlan.equipment}</span>
+            <span className='font-bold ml-1'>{workoutPlan.equipment}</span>
           </p>
-        </div>
-        <div className='text-center my-2'>
-          <div
-            style={{ cursor: 'pointer', color: '#f04c0c', fontSize: '1.1rem' }}
-          >
-             INSTRUCTIONS
-          </div>
         </div>
         {workoutPlan.type && (
-          <p className='text-gray-600'>
+          <p className='text-gray-600' style={{ fontSize: '18px' }}>
             Type: <span className='font-bold'>{workoutPlan.type}</span>
           </p>
         )}
         {workoutPlan.muscle && (
-          <p className='text-gray-600'>
-            Muscle: <span className='font-bold'>{workoutPlan.muscle}</span>
+          <p className='text-gray-600' style={{ fontSize: '18px' }}>
+            Muscle: <span className='font-bold ml-3'>{workoutPlan.muscle}</span>
           </p>
         )}
-        <h3 className='text-lg font-semibold mt-2'>Instructions:</h3>
+        <h3
+          className='text-lg font-semibold ml-20 mt-8'
+          style={{ cursor: 'pointer', color: '#f04c0c', fontSize: '1.1rem' }}
+        >
+          INSTRUCTIONS
+        </h3>
         <ul className='list-disc pl-6'>
           {workoutPlan.instructions.map((instruction, index) => (
-            <li key={index} className='text-gray-700'>
+            <li
+              key={index}
+              className='text-gray-700'
+              style={{ fontSize: '18px' }}
+            >
               {instruction}
             </li>
           ))}
         </ul>
+        <div className='text-center my-4'>
+          <button
+            onClick={() => navigate(-1)}
+            className=' text-white-800 font-bold py-2 px-4 rounded'
+            style={{ backgroundColor: '#f04c0c', color:'white' }}
+          >
+            Go Back
+          </button>
+        </div>
       </div>
     </div>
   );

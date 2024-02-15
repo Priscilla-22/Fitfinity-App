@@ -21,7 +21,7 @@ const WorkoutPlan = ({ workoutPlan }) => {
           src={workoutPlan.displayImage}
           alt={workoutPlan.name}
           className='mb-2'
-          style={{ maxWidth: '300px' }}
+          style={{ width: '300px', height:'200px' }}
         />
       </div>
       <div className='w-2/3 flex flex-col justify-between'>

@@ -9,9 +9,10 @@ function App() {
     <Router>
       <div className='App'>
         <ImageSlider />
-        <h1 className='text-4xl font-bold text-center my-12'>
+        <h1 className='text-4xl font-bold text-center mt-12 mb-3'>
           My Exercise Plan
         </h1>
+        <hr className='mx-auto w-auto' style={{borderTop:'3px dotted #f04c0c', width:'220px'}} />
         <Routes>
           <Route path='/' element={<WorkoutPlanList />} />
           <Route path='/workout/:id' element={<WorkoutPlanDetails />} />

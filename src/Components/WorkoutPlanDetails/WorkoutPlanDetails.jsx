@@ -17,7 +17,7 @@ const WorkoutPlanDetails = () => {
   }
 
   return (
-    <div className='flex bg-white shadow-[0_35px_60px_-15px_rgba(0.5,0.5,0.5,0.5)] rounded-lg p-4 mb-4 relative'>
+    <div className='flex bg-white shadow-[0_35px_60px_-15px_rgba(0.5,0.5,0.5,0.5)] rounded-lg p-4 my-2 relative'>
       <div className='w-1/3 mr-4'>
         <img
           src={workoutPlan.gifUrl}
@@ -31,26 +31,26 @@ const WorkoutPlanDetails = () => {
           <h2 className='text-2xl font-bold'>
             {workoutPlan.name.toUpperCase()}
           </h2>
-          <p className='text-gray-600' style={{ fontSize: '18px' }}>
+          <p className='text-gray-600' style={{ fontSize: '16px' }}>
             Difficulty:{' '}
             <span className='font-bold ml-1'>{workoutPlan.difficulty}</span>
           </p>
-          <p className='text-gray-600' style={{ fontSize: '18px' }}>
+          <p className='text-gray-600' style={{ fontSize: '16px' }}>
             Body Part:{' '}
             <span className='font-bold ml-1'>{workoutPlan.bodyPart}</span>
           </p>
-          <p className='text-gray-600' style={{ fontSize: '18px' }}>
+          <p className='text-gray-600' style={{ fontSize: '16px' }}>
             Equipment:{' '}
             <span className='font-bold ml-1'>{workoutPlan.equipment}</span>
           </p>
         </div>
         {workoutPlan.type && (
-          <p className='text-gray-600' style={{ fontSize: '18px' }}>
+          <p className='text-gray-600' style={{ fontSize: '16px' }}>
             Type: <span className='font-bold'>{workoutPlan.type}</span>
           </p>
         )}
         {workoutPlan.muscle && (
-          <p className='text-gray-600' style={{ fontSize: '18px' }}>
+          <p className='text-gray-600' style={{ fontSize: '16px' }}>
             Muscle: <span className='font-bold ml-3'>{workoutPlan.muscle}</span>
           </p>
         )}
@@ -65,7 +65,7 @@ const WorkoutPlanDetails = () => {
             <li
               key={index}
               className='text-gray-700'
-              style={{ fontSize: '18px' }}
+              style={{ fontSize: '16px' }}
             >
               {instruction}
             </li>
@@ -74,7 +74,7 @@ const WorkoutPlanDetails = () => {
         <div className='text-center my-4'>
           <button
             onClick={() => navigate(-1)}
-            className=' text-white-800 font-bold py-2 px-4 rounded'
+            className=' text-white-800 font-bold  px-2 rounded'
             style={{ backgroundColor: '#f04c0c', color:'white' }}
           >
             Go Back

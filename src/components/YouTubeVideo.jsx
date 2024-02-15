@@ -1,5 +1,7 @@
 
 import React from "react";
+import './YouTubeVideo.css';
+
 function YouTubeVideo() {
   return (<div className="yt">
     <div className="YouTubeVideoContainer">

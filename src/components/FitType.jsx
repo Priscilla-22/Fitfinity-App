@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import YouTubeVideo from "./YouTubeVideo";
+import './FitType.css';
 
 function FitType() {
   const [selectedType, setSelectedType] = useState("");
@@ -125,18 +126,7 @@ function FitType() {
                   Read More
                 </button>
               </div>
-              <div className="card">
-                <img
-                  src="https://images.unsplash.com/photo-1543364195-bfe6e4932397?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fGhlYWx0aHklMjBmb29kc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                  alt="Resource 4"
-                />
-                <p>fruits & vegetables</p>
-                <button
-                  onClick={() => handleResourceClick("Pre-Workout Foods")}
-                >
-                  Read More
-                </button>
-              </div>
+              
               <div className="card">
                 <img
                   src="https://images.unsplash.com/photo-1542444592-0d5997f202eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdoZXklMjBwcm90ZWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"

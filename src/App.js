@@ -1,5 +1,9 @@
 import React from 'react';
 
+import Reminder from './Components/Reminder.jsx'
+import './index.css'; 
+
+
 import { BrowserRouter as Router } from 'react-router-dom';
 import ImageSlider from './Components/ImageSlider/ImageSlider.jsx';
 import WorkoutPlanList from './Components/WorkoutPlanList/WorkoutPlanList.jsx';
@@ -23,8 +27,19 @@ import ImageSlider from './Components/ImageSlider/ImageSlider.jsx';
 import WorkoutPlanList from './Components/WorkoutPlanList/WorkoutPlanList.jsx';
 import WorkoutPlanDetails from './Components/WorkoutPlanDetails/WorkoutPlanDetails.jsx';
 
-function App() {
+
+
+const App = () => {
   return (
+
+    <div style = {{marginLeft:"75%"}}>
+      <h1>Reminders!</h1>
+      <Reminder />
+    </div>
+ 
+  );
+};
+
     <Router>
       <div className='App'>
         <ImageSlider />
@@ -53,6 +68,7 @@ function App() {
 
   );
 };
+
 
 
 export default App;

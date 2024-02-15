@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import WorkoutPlan from '../WorkoutPlans/WorkoutPlans';
-import SortFilterBar from '../SortFilterBar/SortFilterBar';
+import SortFilterBar from '../FilterBar/FilterBar';
 
 const WorkoutPlanList = () => {
   const [workoutPlans, setWorkoutPlans] = useState([]);
-  const [sortBy, setSortBy] = useState('name');
   const [filters, setFilters] = useState({
     difficulty: [],
     bodyPart: [],
@@ -15,18 +14,12 @@ const WorkoutPlanList = () => {
     fetchWorkoutPlans();
   }, []);
 
-  const fetchWorkoutPlans = async () => {
-    try {
-      const response = await fetch('http://localhost:3000/workoutPlans');
-      const data = await response.json();
-      setWorkoutPlans(data);
-    } catch (error) {
-      console.error('Error fetching workout plans:', error);
-    }
-  };
-
-  const handleSortChange = (sortBy) => {
-    setSortBy(sortBy);
+  const fetchWorkoutPlans = () => {
+   fetch('http://localhost:3000/workoutPlans')
+      .then((r) => r.json())
+      .then((data)=>
+      setWorkoutPlans(data))
+     .catch( (err) =>  console.error('Error fetching workout plans:', err));
   };
 
   const handleFilterChange = (name, value, checked) => {
@@ -43,20 +36,7 @@ const WorkoutPlanList = () => {
     }
   };
 
-  const sortedWorkoutPlans = workoutPlans.sort((a, b) => {
-    if (sortBy === 'name') {
-      return a.name.localeCompare(b.name);
-    } else if (sortBy === 'difficulty') {
-      return a.difficulty.localeCompare(b.difficulty);
-    } else if (sortBy === 'bodyPart') {
-      return a.bodyPart.localeCompare(b.bodyPart);
-    } else if (sortBy === 'equipment') {
-      return a.equipment.localeCompare(b.equipment);
-    }
-    return 0;
-  });
-
-  const filteredWorkoutPlans = sortedWorkoutPlans.filter((workoutPlan) => {
+  const filteredWorkoutPlans = workoutPlans.filter((workoutPlan) => {
     if (
       filters.difficulty.length > 0 &&
       !filters.difficulty.includes(workoutPlan.difficulty)
@@ -81,8 +61,8 @@ const WorkoutPlanList = () => {
   return (
     <div className='max-w-screen-xl mx-auto'>
       <SortFilterBar
-        onSortChange={handleSortChange}
         onFilterChange={handleFilterChange}
+        workoutPlanNames={workoutPlans.map((plan) => plan.name)}
       />
       {filteredWorkoutPlans.map((workoutPlan) => (
         <WorkoutPlan key={workoutPlan.id} workoutPlan={workoutPlan} />

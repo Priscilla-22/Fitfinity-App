@@ -43,7 +43,20 @@ const WorkoutPlanList = () => {
     }
   };
 
-  const filteredWorkoutPlans = workoutPlans.filter((workoutPlan) => {
+  const sortedWorkoutPlans = workoutPlans.sort((a, b) => {
+    if (sortBy === 'name') {
+      return a.name.localeCompare(b.name);
+    } else if (sortBy === 'difficulty') {
+      return a.difficulty.localeCompare(b.difficulty);
+    } else if (sortBy === 'bodyPart') {
+      return a.bodyPart.localeCompare(b.bodyPart);
+    } else if (sortBy === 'equipment') {
+      return a.equipment.localeCompare(b.equipment);
+    }
+    return 0;
+  });
+
+  const filteredWorkoutPlans = sortedWorkoutPlans.filter((workoutPlan) => {
     if (
       filters.difficulty.length > 0 &&
       !filters.difficulty.includes(workoutPlan.difficulty)
@@ -65,30 +78,15 @@ const WorkoutPlanList = () => {
     return true;
   });
 
-  const sortedWorkoutPlans = filteredWorkoutPlans.sort((a, b) => {
-    if (sortBy === 'name') {
-      return a.name.localeCompare(b.name);
-    } else if (sortBy === 'difficulty') {
-      return a.difficulty.localeCompare(b.difficulty);
-    } else if (sortBy === 'bodyPart') {
-      return a.bodyPart.localeCompare(b.bodyPart);
-    } else if (sortBy === 'equipment') {
-      return a.equipment.localeCompare(b.equipment);
-    }
-    return 0;
-  });
-
   return (
     <div className='max-w-screen-xl mx-auto'>
       <SortFilterBar
         onSortChange={handleSortChange}
         onFilterChange={handleFilterChange}
       />
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {sortedWorkoutPlans.map((workoutPlan) => (
-          <WorkoutPlan key={workoutPlan.id} workoutPlan={workoutPlan} />
-        ))}
-      </div>
+      {filteredWorkoutPlans.map((workoutPlan) => (
+        <WorkoutPlan key={workoutPlan.id} workoutPlan={workoutPlan} />
+      ))}
     </div>
   );
 };

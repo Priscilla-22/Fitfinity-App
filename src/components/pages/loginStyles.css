@@ -1,0 +1,14 @@
+/* loginStyles.css */
+
+.login-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 100vh; 
+  padding: 20px;
+}
+  
+  .login-container h2 {
+    margin-bottom: 20px;
+  }
+  

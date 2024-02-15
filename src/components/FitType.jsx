@@ -16,5 +16,14 @@ function FitType() {
         setSelectedType(resource);
       }
 
+      useEffect(() => {
+        fetch("https://articles-jlcz.onrender.com/Articles")
+          .then((resp) => resp.json())
+          .then((data) => {
+            setDisplayArticle(data);
+          })
+          .catch((error) => console.error("Error fetching data:", error));
+      }, []); // Empty dependency array to fetch data only once
+
 }
 export default FitType;

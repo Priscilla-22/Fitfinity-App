@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const WorkoutPlan = ({ workoutPlan }) => {
   const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate();
 
   const toggleExpanded = () => {
     setExpanded(!expanded);
   };
+
+    const handleKickstart = () => {
+      navigate(`/workout/${workoutPlan.id}`);
+    };
 
   return (
     <div className='flex bg-white shadow-[0_35px_60px_-15px_rgba(0.5,0.5,0.5,0.5)] rounded-lg p-4 mb-4 relative'>
@@ -38,14 +45,22 @@ const WorkoutPlan = ({ workoutPlan }) => {
           {expanded ? (
             <div
               onClick={toggleExpanded}
-              style={{ cursor: 'pointer', color: '#f04c0c', fontSize: '1.1rem' }}
+              style={{
+                cursor: 'pointer',
+                color: '#f04c0c',
+                fontSize: '1.1rem',
+              }}
             >
               Close
             </div>
           ) : (
             <div
-              onClick={toggleExpanded}
-              style={{ cursor: 'pointer', color: '#f04c0c', fontSize: '1.1rem' }}
+              onClick={handleKickstart}
+              style={{
+                cursor: 'pointer',
+                color: '#f04c0c',
+                fontSize: '1.1rem',
+              }}
             >
               Kick start the exercise ➔
             </div>
@@ -63,7 +78,7 @@ const WorkoutPlan = ({ workoutPlan }) => {
                 Muscle: <span className='font-bold'>{workoutPlan.muscle}</span>
               </p>
             )}
-            <h3 className='text-lg font-semibold mt-2'>Instructions:</h3>
+            {/* <h3 className='text-lg font-semibold mt-2'>Instructions:</h3> */}
             <ul className='list-disc pl-6'>
               {workoutPlan.instructions.map((instruction, index) => (
                 <li key={index} className='text-gray-700'>

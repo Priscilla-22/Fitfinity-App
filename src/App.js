@@ -33,7 +33,7 @@ const App = () => {
         <hr className='mx-auto w-auto' style={{ borderTop: '3px dotted #f04c0c', width: '220px' }} />
         <Routes>
           <Route path='/' element={<WorkoutPlanList />} />
-          <Route path='/workoutplans/:id' element={<WorkoutPlanDetails />} />
+          <Route path='/workout/:id' element={<WorkoutPlanDetails />} />
         </Routes>
         <Routes>
           <Route path="/fittype" element={<FitType />} />

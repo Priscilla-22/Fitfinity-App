@@ -23,7 +23,7 @@ const App = () => {
         <Reminder />
       </div>
       <Link to="/fittype">
-          <button style={{ position: "absolute", top: 0, marginLeft: '10%', zIndex: 999 }}>Go to FitType</button>
+          <button style={{ Top: '0', marginLeft: '10%', zIndex: 999 }}>Go to FitType</button>
         </Link>
       <div className='App'>
         <ImageSlider />

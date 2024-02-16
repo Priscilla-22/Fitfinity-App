@@ -11,7 +11,7 @@
   .exercise-input {
     margin-bottom: 10px;
     padding: 8px;
-    border: 1px  black;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
   }
@@ -21,7 +21,7 @@
     border: none;
     border-radius: 5px;
     background-color: #007bff;
-    color: black;
+    color: #fff;
     font-size: 16px;
     cursor: pointer;
   }

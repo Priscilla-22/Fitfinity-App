@@ -1,12 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Header from './Header'
 
 const Hero = () => {
   return (
     <div
-      className='bg-cover bg-center h-screen'
+      className='bg-cover bg-center h-60'
       style={{ backgroundImage: `url('/path/to/hero-image.jpg')` }}
     >
-      <div className='bg-gray-900 bg-opacity-50 h-full flex items-center justify-center'>
+      <div className='bg-gray-900 bg-opacity-50 h-60 items-center justify-center'>
+              <div className='flex justify-between w-full max-w-screen-lg mx-auto px-4'>
+                  <Header />
+          <div>
+            <ul className='flex space-x-4 '>
+              <li>
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/workout-plans'>Workout Plans</Link>
+              </li>
+              <li>
+                <Link to='/fittype'>Fit Type</Link>
+              </li>
+              <li>
+                <Link to='/progress-tracker'>Progress Tracker</Link>
+              </li>
+              <li>
+                <Link to='/exercise-tracker'>Exercise Tracker</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div className='text-center'>
           <h2 className='text-4xl font-bold text-white'>
             Get Fit and Stay Healthy

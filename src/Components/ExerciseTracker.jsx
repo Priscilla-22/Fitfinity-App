@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './ExerciseTracker.css';
 const ExerciseTracker = () => {
     const [exercise, setExercise] = useState('');
     const [duration, setDuration] = useState('');

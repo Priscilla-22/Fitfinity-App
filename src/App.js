@@ -1,88 +1,48 @@
 import React from 'react';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import FitType from './components/FitType.jsx';
-
-
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import FitType from './Components/FitType.jsx';
 import Reminder from './Components/Reminder.jsx'
-import './index.css'; 
-
-
-
-import { BrowserRouter as Router } from 'react-router-dom';
 import ImageSlider from './Components/ImageSlider/ImageSlider.jsx';
 import WorkoutPlanList from './Components/WorkoutPlanList/WorkoutPlanList.jsx';
-import AppRouter from './Components/Registration/AppRouter';
-import Navigation from './Components/Registration/Navigation.jsx';
-
+import AppRouter from './Components/AppRouter';
+import Navigation from './Components/Navigation.jsx';
+import WorkoutPlanDetails from './Components/WorkoutPlanDetails/WorkoutPlanDetails.jsx';
+import ProgressTracker from './Components/ProgressTracker';
+import ExerciseTracker from './Components/ExerciseTracker';
+import './index.css';
 
 const App = () => {
   return (
     <Router>
       <div>
-        <ImageSlider/>
-        <WorkoutPlanList/>
         <Navigation />
         <AppRouter />
       </div>
-    </Router>
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ImageSlider from './Components/ImageSlider/ImageSlider.jsx';
-import WorkoutPlanList from './Components/WorkoutPlanList/WorkoutPlanList.jsx';
-import WorkoutPlanDetails from './Components/WorkoutPlanDetails/WorkoutPlanDetails.jsx';
-
-
-
-const App = () => {
-  return (
-
-    <div style = {{marginLeft:"75%"}}>
-      <h1>Reminders!</h1>
-      <Reminder />
-    </div>
- 
-  );
-};
-
-    <Router>
+      <div style={{ marginLeft: "75%" }}>
+        <h1>Reminders!</h1>
+        <Reminder />
+      </div>
+      <Link to="/fittype">
+          <button style={{ position: "absolute", top: 0, marginLeft: '10%', zIndex: 999 }}>Go to FitType</button>
+        </Link>
       <div className='App'>
         <ImageSlider />
         <h1 className='text-4xl font-bold text-center mt-12 mb-3'>
           My Exercise Plan
         </h1>
-        <hr className='mx-auto w-auto' style={{borderTop:'3px dotted #f04c0c', width:'220px'}} />
+        <hr className='mx-auto w-auto' style={{ borderTop: '3px dotted #f04c0c', width: '220px' }} />
         <Routes>
           <Route path='/' element={<WorkoutPlanList />} />
-          <Route path='/workout/:id' element={<WorkoutPlanDetails />} />
+          <Route path='/workoutplans/:id' element={<WorkoutPlanDetails />} />
         </Routes>
+        <Routes>
+          <Route path="/fittype" element={<FitType />} />
+        </Routes>
+        <ProgressTracker />
+        <ExerciseTracker />
       </div>
     </Router>
-
-import './App.css';
-import ProgressTracker from './components/ProgressTracker';
-import ExerciseTracker from './components/ExerciseTracker';
-function App() {
-  return (
-    <div className="App">
-
-       <Router>
-      <Routes>
-        <Route path="/" element={<FitType />} />
-      </Routes>
-    </Router>
-     
-
-      <ProgressTracker />
-      <ExerciseTracker />
-
-    </div>
-    
-
-
   );
 };
-
-
 
 export default App;

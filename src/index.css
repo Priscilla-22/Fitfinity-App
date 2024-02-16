@@ -2,7 +2,6 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f04c0c;
 
   margin: 0;
   padding: 0;
@@ -10,8 +9,8 @@ body {
 
 
 .reminder-button {
-  background-color: pink;
-  color: blue;
+  background-color: black;
+  color: white;
   border: none;
   padding: 5px 10px;
   cursor: pointer;

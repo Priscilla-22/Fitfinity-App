@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ProgressTracker.css';
 
 // Progress tracking component
 const ProgressTracker = () => {

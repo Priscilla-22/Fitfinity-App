@@ -60,6 +60,13 @@ const WorkoutPlanList = () => {
 
   return (
     <div className='max-w-screen-xl mx-auto'>
+         <h1 className='text-4xl font-bold text-center mt-12 mb-3'>
+          My Exercise Plan
+        </h1>
+        <hr
+          className='mx-auto w-auto'
+          style={{ borderTop: '3px dotted #f04c0c', width: '220px' }}
+        />
       <FilterBar
         onFilterChange={handleFilterChange}
         workoutPlanNames={workoutPlans.map((plan) => plan.name)}

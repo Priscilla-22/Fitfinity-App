@@ -16,7 +16,6 @@ const WorkoutPlan = ({ workoutPlan }) => {
 
   return (
     <div className='flex bg-white shadow-[0_35px_60px_-15px_rgba(0.5,0.5,0.5,0.5)] rounded-lg p-4 mb-4 relative'>
-     
       <div className='w-1/3 mr-4'>
         <img
           src={workoutPlan.displayImage}

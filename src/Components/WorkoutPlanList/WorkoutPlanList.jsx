@@ -57,7 +57,7 @@ const WorkoutPlanList = () => {
         style={{ borderTop: '3px dotted #f04c0c', width: '220px' }}
       />
       <div className='max-w-screen-xl mx-auto flex'>
-        <div className='w-5/12'>
+        <div className='w-1/4 mr-4'>
           <FilterBar onFilterChange={handleFilterChange} />
         </div>
         <div className='w-3/4'>

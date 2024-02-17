@@ -8,10 +8,9 @@ const Header = () => {
         <h1 className='text-3xl font-bold text-white'>
           <Link to='/'>
             FITFINITY
-            {/* <span style={{ color: '#f04c0c' }}>APP</span> */}
           </Link>
         </h1>
-        <span className='text-orange-500 font-bold text-3xl w-30 '>APP</span>
+        <span className='text-orange-600 font-bold text-3xl w-30 '>APP</span>
       </div>
     </header>
   );

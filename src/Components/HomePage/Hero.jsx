@@ -1,28 +1,43 @@
 import React from 'react';
-import NavBar from './NavBar';
+import { Link } from 'react-router-dom';
 import Header from './Header';
 
 const Hero = () => {
   return (
     <div
-      className='bg-cover bg-center h-140'
-      style={{ backgroundImage: `url('/path/to/hero-image.jpg')` }}
+      className='bg-cover bg-center mt-0'
+      style={{
+        backgroundImage: `url('/path/to/hero-image.jpg')`,
+        marginTop: 0,
+      }}
     >
-      <div className='bg-black bg-opacity-90 h-140 items-center justify-center'>
-        <div className='flex justify-between w-full h-14 max-w-screen-lg mx-1 mb-12 px-6 py-4'>
+      <div className='bg-black bg-opacity-90 pb-3'>
+        <div className='flex justify-between w-full h-14 max-w-screen-lg mx-1 mb-12 px-6 py-3'>
           <Header />
-          <NavBar />
+          <div>
+            <ul className='flex space-x-4  font-semibold text-white px-4'>
+              <li>
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/workout-plans'>Workout-Plans</Link>
+              </li>
+              <li>
+                <Link to='/fittype'>Fit-Type</Link>
+              </li>
+              <li>
+                <Link to='/progress-tracker'>Progress-Tracker</Link>
+              </li>
+              <li>
+                <Link to='/exercise-tracker'>Exercise-Tracker</Link>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className='text-center '>
           <h2 className='text-4xl font-bold text-white'>
             Get Fit and Stay Healthy
           </h2>
-          <p className='text-xl text-white mt-4'>
-            Sign up now and start your fitness journey with us!
-          </p>
-          <button className='bg-white text-gray-900 font-bold py-2 px-4 rounded-lg mt-5 mb-5 hover:bg-gray-200'>
-            Sign Up
-          </button>
         </div>
       </div>
     </div>

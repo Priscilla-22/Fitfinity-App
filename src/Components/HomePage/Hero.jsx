@@ -8,7 +8,7 @@ const Hero = () => {
       className='bg-cover bg-center h-140'
       style={{ backgroundImage: `url('/path/to/hero-image.jpg')` }}
     >
-      <div className='bg-gray-900 bg-opacity-50 h-140 items-center justify-center'>
+      <div className='bg-black bg-opacity-90 h-140 items-center justify-center'>
         <div className='flex justify-between w-full h-14 max-w-screen-lg mx-1 mb-12 px-6 py-4'>
           <Header />
           <NavBar />

@@ -18,6 +18,10 @@ const Hero = () => {
     setShowSignUpForm(false);
   };
 
+  const handleCloseForm = () => {
+    setShowSignUpForm(false);
+    setShowLogInForm(false);
+  };
   return (
     <div
       className='bg-cover bg-center mt-0'
@@ -69,18 +73,23 @@ const Hero = () => {
           </button>
         </div>
         {showSignUpForm && (
-          <div className='flex justify-center items-center mt-5'>
-            <div className='mr-4'>
-              <h3 className='text-lg font-bold text-white mb-2'>Sign Up</h3>
-              <SignUpForm />
+          <div className='fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50 z-50'>
+            <div className='mr-4 bg-white px-4 py-3'>
+              <h3 className='text-lg font-bold text-orange-600 mb-2 flex justify-center items-center'>
+                Sign Up
+              </h3>
+              <SignUpForm onClose={handleCloseForm} />
             </div>
           </div>
         )}
+
         {showLogInForm && (
-          <div className='flex justify-center items-center mt-5'>
-            <div>
-              <h3 className='text-lg font-bold text-white mb-2'>Log In</h3>
-              <LogInForm />
+          <div className='fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50 z-50'>
+            <div className='bg-white px-4 py-3'>
+              <h3 className='text-lg font-bold  text-orange-600 mb-2 flex justify-center items-center'>
+                Log In
+              </h3>
+              <LogInForm onClose={handleCloseForm} />
             </div>
           </div>
         )}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const LogInForm = () => {
+const LogInForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -13,14 +13,12 @@ const LogInForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-    .catch ((error) =>console.error('Error:', error))
-    
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    }).catch((error) => console.error('Error:', error));
   };
 
   return (
@@ -63,6 +61,13 @@ const LogInForm = () => {
         >
           Submit
         </button>
+        <span
+          onClick={onClose}
+          className='text-orange-600 hover:text-orange-300 font-xs px-2 cursor-pointer'
+        >
+          Close
+          <hr className='border-orange-500' />
+        </span>
       </div>
     </form>
   );

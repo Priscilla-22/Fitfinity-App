@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SignUpForm = () => {
+const SignUpForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -11,18 +11,16 @@ const SignUpForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        fetch('http://localhost:3000/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-            .catch((err) => console.error('Error:', err));
-    }
-  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    fetch('http://localhost:3000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    }).catch((err) => console.error('Error:', err));
+  };
 
   return (
     <form onSubmit={handleSubmit} className='w-full max-w-sm'>
@@ -81,6 +79,13 @@ const SignUpForm = () => {
         >
           Submit
         </button>
+        <span
+          onClick={onClose}
+          className='text-orange-600 hover:text-orange-300 font-xs px-2 cursor-pointer'
+        >
+          Close
+          <hr className='border-orange-500' />
+        </span>
       </div>
     </form>
   );

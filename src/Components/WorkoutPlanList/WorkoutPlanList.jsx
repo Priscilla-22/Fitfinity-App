@@ -5,9 +5,9 @@ import FilterBar from '../FilterBar/FilterBar';
 const WorkoutPlanList = () => {
   const [workoutPlans, setWorkoutPlans] = useState([]);
   const [filters, setFilters] = useState({
-    difficulty: [],
-    bodyPart: [],
-    equipment: [],
+    difficulty: '',
+    bodyPart: '',
+    equipment: '',
   });
 
   useEffect(() => {
@@ -15,43 +15,32 @@ const WorkoutPlanList = () => {
   }, []);
 
   const fetchWorkoutPlans = () => {
-   fetch('http://localhost:3000/workoutPlans')
+    fetch('http://localhost:3000/workoutPlans')
       .then((r) => r.json())
-      .then((data)=>
-      setWorkoutPlans(data))
-     .catch( (err) =>  console.error('Error fetching workout plans:', err));
+      .then((data) => setWorkoutPlans(data))
+      .catch((err) => console.error('Error fetching workout plans:', err));
   };
 
-  const handleFilterChange = (name, value, checked) => {
-    if (checked) {
-      setFilters((prevFilters) => ({
-        ...prevFilters,
-        [name]: [...prevFilters[name], value],
-      }));
-    } else {
-      setFilters((prevFilters) => ({
-        ...prevFilters,
-        [name]: prevFilters[name].filter((f) => f !== value),
-      }));
-    }
+  const handleFilterChange = (name, value) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [name]: value,
+    }));
   };
 
   const filteredWorkoutPlans = workoutPlans.filter((workoutPlan) => {
     if (
-      filters.difficulty.length > 0 &&
-      !filters.difficulty.includes(workoutPlan.difficulty)
+      filters.difficulty !== '' &&
+      filters.difficulty !== workoutPlan.difficulty
     ) {
       return false;
     }
-    if (
-      filters.bodyPart.length > 0 &&
-      !filters.bodyPart.includes(workoutPlan.bodyPart)
-    ) {
+    if (filters.bodyPart !== '' && filters.bodyPart !== workoutPlan.bodyPart) {
       return false;
     }
     if (
-      filters.equipment.length > 0 &&
-      !filters.equipment.includes(workoutPlan.equipment)
+      filters.equipment !== '' &&
+      filters.equipment !== workoutPlan.equipment
     ) {
       return false;
     }
@@ -59,22 +48,25 @@ const WorkoutPlanList = () => {
   });
 
   return (
-    <div className='max-w-screen-xl mx-auto'>
-         <h1 className='text-4xl font-bold text-center mt-12 mb-3'>
-          My Exercise Plan
-        </h1>
-        <hr
-          className='mx-auto w-auto'
-          style={{ borderTop: '3px dotted #f04c0c', width: '220px' }}
-        />
-      <FilterBar
-        onFilterChange={handleFilterChange}
-        workoutPlanNames={workoutPlans.map((plan) => plan.name)}
+    <>
+      <div className='text-4xl font-bold text-center mt-12 mb-3'>
+        My Exercise Plan
+      </div>
+      <hr
+        className='mx-auto w-auto'
+        style={{ borderTop: '3px dotted #f04c0c', width: '220px' }}
       />
-      {filteredWorkoutPlans.map((workoutPlan) => (
-        <WorkoutPlan key={workoutPlan.id} workoutPlan={workoutPlan} />
-      ))}
-    </div>
+      <div className='max-w-screen-xl mx-auto flex'>
+        <div className='w-5/12'>
+          <FilterBar onFilterChange={handleFilterChange} />
+        </div>
+        <div className='w-3/4'>
+          {filteredWorkoutPlans.map((workoutPlan) => (
+            <WorkoutPlan key={workoutPlan.id} workoutPlan={workoutPlan} />
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 

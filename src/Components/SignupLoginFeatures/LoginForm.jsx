@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const LogInForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: '',
   });
 
@@ -10,7 +10,7 @@ const LogInForm = ({ onClose }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit =  (e) => {
     e.preventDefault();
     fetch('http://localhost:3000/login', {
       method: 'POST',
@@ -19,19 +19,24 @@ const LogInForm = ({ onClose }) => {
       },
       body: JSON.stringify(formData),
     }).catch((error) => console.error('Error:', error));
+        setFormData({ username: '', password: '' });
+
   };
 
   return (
     <form onSubmit={handleSubmit} className='w-full max-w-sm'>
       <div className='mb-4'>
-        <label htmlFor='email' className='block text-gray-700 font-bold mb-2'>
-          Email
+        <label
+          htmlFor='username'
+          className='block text-gray-700 font-bold mb-2'
+        >
+          Username
         </label>
         <input
-          type='email'
-          id='email'
-          name='email'
-          value={formData.email}
+          type='text'
+          id='username'
+          name='username'
+          value={formData.username}
           onChange={handleChange}
           className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
           required

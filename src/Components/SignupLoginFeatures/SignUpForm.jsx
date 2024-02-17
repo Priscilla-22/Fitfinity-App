@@ -20,6 +20,8 @@ const SignUpForm = ({ onClose }) => {
       },
       body: JSON.stringify(formData),
     }).catch((err) => console.error('Error:', err));
+        setFormData({ username:'',email: '', password: '' });
+
   };
 
   return (

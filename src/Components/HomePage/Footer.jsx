@@ -84,14 +84,13 @@ const Footer = () => {
                   Instagram
                 </a>
               </li>
-              {/* Add more social media links as needed */}
             </ul>
           </div>
         </div>
       </div>
       <div className='mt-8 text-center border-t border-gray-700 pt-4'>
         <p className='text-gray-400'>
-          &copy; {new Date().getFullYear()} My Fitness App. All rights reserved.
+          &copy; {new Date().getFullYear()} Fitfinity App. All rights reserved.
         </p>
       </div>
     </footer>

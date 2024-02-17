@@ -23,9 +23,9 @@ const Testimonials = () => {
               </p>
               <div className='mt-4'>
                 <div className='text-sm font-medium text-gray-900'>
-                  Jane Doe
+                  Priscilla Wakahia 🦋
                 </div>
-                <div className='text-sm text-gray-500'>Los Angeles, CA</div>
+                <div className='text-sm text-gray-500'>Kenya, Meru</div>
               </div>
             </div>
           </div>
@@ -39,9 +39,9 @@ const Testimonials = () => {
               </p>
               <div className='mt-4'>
                 <div className='text-sm font-medium text-gray-900'>
-                  John Doe
+                  Joshua Al'Gore 🤎
                 </div>
-                <div className='text-sm text-gray-500'>New York, NY</div>
+                <div className='text-sm text-gray-500'>Kenya, Ronga</div>
               </div>
             </div>
           </div>
@@ -54,9 +54,9 @@ const Testimonials = () => {
               </p>
               <div className='mt-4'>
                 <div className='text-sm font-medium text-gray-900'>
-                  Sarah Smith
+                  Linda Rono ❤️
                 </div>
-                <div className='text-sm text-gray-500'>Chicago, IL</div>
+                <div className='text-sm text-gray-500'>Kenya, Ruiru</div>
               </div>
             </div>
           </div>

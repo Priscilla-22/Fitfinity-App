@@ -12,10 +12,10 @@ const Features = () => {
             A better way to track your fitness.
           </p>
           <p className='mt-4 text-gray-500'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus quia, tenetur minus voluptate odio placeat quod ea
-            molestias, repellat veritatis corrupti explicabo officia itaque fuga
-            asperiores repellat.
+            Fitfinity is more than just a fitness app; it's your ultimate
+            companion on your journey to a healthier lifestyle. Whether you're
+            just starting out or aiming to reach new heights in your fitness
+            goals, Fitfinity provides the tools and support you need to succeed.
           </p>
         </div>
 
@@ -44,8 +44,11 @@ const Features = () => {
                     Workout Planner
                   </h3>
                   <p className='text-base text-gray-500'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer nec odio. Praesent libero.
+                    Tailor your fitness journey with personalized workout plans
+                    designed to match your goals and fitness level. Whether
+                    you're aiming to build strength, improve flexibility, or
+                    enhance endurance, Fitfinity's workout planner has you
+                    covered.
                   </p>
                 </div>
               </div>
@@ -82,8 +85,10 @@ const Features = () => {
                     Progress Tracker
                   </h3>
                   <p className='text-base text-gray-500'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer nec odio. Praesent libero.
+                    Stay motivated and monitor your progress with Fitfinity's
+                    intuitive progress tracker. Visualize your achievements, set
+                    new milestones, and celebrate your success as you work
+                    towards your fitness goals.
                   </p>
                 </div>
               </div>
@@ -114,8 +119,10 @@ const Features = () => {
                     Exercise Tracker
                   </h3>
                   <p className='text-base text-gray-500'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer nec odio. Praesent libero.
+                    Keep track of your workouts and exercise routines
+                    effortlessly with Fitfinity's exercise tracker. From cardio
+                    sessions to strength training, log your activities, track
+                    your performance, and stay on top of your fitness regimen.
                   </p>
                 </div>
               </div>

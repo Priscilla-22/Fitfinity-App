@@ -43,12 +43,21 @@ function NutritionFitType() {
 
   return (
     <>
+      <img
+        className=' w-full h-12 md:h-13 object-cover'
+        src='https://images.indianexpress.com/2021/12/pexels-photo-5966430-food.jpg'
+        alt='unavailable'
+      />
+      <h1 className='text-4xl font-bold text-center mt-12 mb-3'>
+        Fit Nutrition
+      </h1>
+      <hr
+        className='mx-auto w-auto'
+        style={{ borderTop: '3px dotted #f04c0c', width: '220px' }}
+      />
       <div className='max-w-screen-xl mx-auto px-4'>
         <YouTubeVideo />
         <div className='fit'>
-          <h1 className='text-4xl font-bold' id='topic'>
-            Fit Nutrition
-          </h1>
           <p
             className='text-blue-500 cursor-pointer'
             onClick={handleClick}
@@ -62,11 +71,7 @@ function NutritionFitType() {
             <h2 className='text-2xl font-bold mb-2'>
               Diet to follow depending on your goal?
             </h2>
-            <img
-              className='mx-auto w-full md:w-auto'
-              src='https://images.indianexpress.com/2021/12/pexels-photo-5966430-food.jpg'
-              alt='unavailable'
-            />
+
             <select
               className='block mx-auto mt-4 p-2 border border-gray-300 rounded-md'
               value={selectedType}
@@ -108,39 +113,72 @@ function NutritionFitType() {
           </div>
         </div>
         <div className='suggested-resources mt-8'>
-          <h2 className='text-2xl font-bold mb-2'>Suggested Resources</h2>
+          <h2 className='text-2xl  font-bold mb-2'>Suggested Resources</h2>
           <div className='flex flex-wrap'>
             <div
               className='w-full md:w-1/3 p-4'
-              onClick={() => handleResourceClick('Resource 1')}
+              onClick={() => handleResourceClick('Nutrition Basics')}
             >
               <div className='bg-white rounded-lg shadow-md p-6'>
-                <h3 className='text-xl font-semibold mb-2'>Resource 1</h3>
+                <h3 className='text-2sm text-orange-600 font-semibold mb-2'>
+                  Nutrition Basics
+                </h3>
                 <p className='text-gray-600'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Understanding the fundamental principles of nutrition is
+                  crucial for achieving your fitness goals. Learn about
+                  macronutrients, micronutrients, and how they impact your
+                  body's performance.
                 </p>
+                <div className='mt-4'>
+                  <div className='text-sm font-medium text-gray-900'>
+                    Nehemiah Cheruiyot 🍲
+                  </div>
+                  <div className='text-sm text-gray-500'>Kenya, Thika</div>
+                </div>
               </div>
             </div>
             <div
               className='w-full md:w-1/3 p-4'
-              onClick={() => handleResourceClick('Resource 2')}
+              onClick={() => handleResourceClick('Meal Planning')}
             >
               <div className='bg-white rounded-lg shadow-md p-6'>
-                <h3 className='text-xl font-semibold mb-2'>Resource 2</h3>
+                <h3 className='text-2sm text-orange-600 font-semibold mb-2'>
+                  Meal Planning
+                </h3>
                 <p className='text-gray-600'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Discover the importance of effective meal planning for your
+                  fitness journey. Explore balanced and personalized meal plans
+                  to support your specific fitness goals, whether it's fat loss,
+                  muscle gain, or overall well-being.
                 </p>
+                <div className='mt-4'>
+                  <div className='text-sm font-medium text-gray-900'>
+                    Monica Mwangi 🍹
+                  </div>
+                  <div className='text-sm text-gray-500'>Kenya, Rongai</div>
+                </div>
               </div>
             </div>
             <div
               className='w-full md:w-1/3 p-4'
-              onClick={() => handleResourceClick('Resource 3')}
+              onClick={() => handleResourceClick('Supplements Guide')}
             >
               <div className='bg-white rounded-lg shadow-md p-6'>
-                <h3 className='text-xl font-semibold mb-2'>Resource 3</h3>
+                <h3 className='text-2sm text-orange-600 font-semibold mb-2'>
+                  Supplements Guide
+                </h3>
                 <p className='text-gray-600'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Learn about the role of supplements in enhancing your fitness
+                  journey. From protein shakes to vitamins, explore the right
+                  supplements to support your nutrition and optimize your
+                  workouts.
                 </p>
+                <div className='mt-4'>
+                  <div className='text-sm font-medium text-gray-900'>
+                    Priscilla Wakahia 🦋
+                  </div>
+                  <div className='text-sm text-gray-500'>Kenya, Meru</div>
+                </div>
               </div>
             </div>
           </div>
@@ -148,9 +186,9 @@ function NutritionFitType() {
         <div className='nutrition-tip mt-8'>
           <h2 className='text-2xl font-bold mb-2'>Nutrition Tip</h2>
           <p className='text-gray-600'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            commodo, velit at fermentum eleifend, quam nisi elementum nibh, ac
-            finibus velit nisl vel sapien.
+            Fuel your body with nutrient-dense foods to maximize your energy
+            levels and recovery. Remember, consistency in a balanced diet is key
+            to achieving sustainable fitness results.
           </p>
         </div>
         <div className='nutrition-quiz mt-8'>
@@ -158,7 +196,7 @@ function NutritionFitType() {
           <p className='text-gray-600'>
             How much do you know about nutrition? Take our quiz and find out!
           </p>
-          <button className='bg-blue-500 text-white py-2 px-4 rounded mt-4'>
+          <button className='bg-orange-600 text-white py-1 px-2  mb-2 rounded mt-4'>
             Take the Quiz
           </button>
         </div>

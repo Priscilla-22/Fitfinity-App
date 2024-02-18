@@ -42,7 +42,7 @@ const Hero = () => {
                 <Link to='/workout-plans'>Workout-Plans</Link>
               </li>
               <li>
-                <Link to='/Nutrition-fitType'>Fit-Type</Link>
+                <Link to='/Nutrition-fitType'>Nutrition</Link>
               </li>
               <li>
                 <Link to='/progress-tracker'>Progress-Tracker</Link>

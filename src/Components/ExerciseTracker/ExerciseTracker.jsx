@@ -1,6 +1,4 @@
-
 import React, { useState } from 'react';
-import './ExerciseTracker.css'; 
 
 const ExerciseTracker = () => {
   const [exercise, setExercise] = useState('');
@@ -15,27 +13,42 @@ const ExerciseTracker = () => {
   };
 
   return (
-    <div className="exercise-container">
-      <h2 className="exercise-heading">Exercise Tracker</h2>
-      <div>
-        <label>
-          Exercise:
-          <input type="text" className="exercise-input" value={exercise} onChange={(e) => setExercise(e.target.value)} />
-        </label>
+    <div className='max-w-screen-md mx-auto p-4 border border-gray-200 rounded-lg shadow-md mt-8'>
+      <h2 className='text-2xl font-semibold mb-4 text-center'>
+        Exercise Tracker
+      </h2>
+      <div className='mb-4'>
+        <label className='block mb-2'>Exercise:</label>
+        <input
+          type='text'
+          className='w-full p-2 border border-gray-300 rounded-md'
+          value={exercise}
+          onChange={(e) => setExercise(e.target.value)}
+        />
       </div>
-      <div>
-        <label>
-          Duration (minutes):
-          <input type="number" className="exercise-input" value={duration} onChange={(e) => setDuration(e.target.value)} />
-        </label>
+      <div className='mb-4'>
+        <label className='block mb-2'>Duration (minutes):</label>
+        <input
+          type='number'
+          className='w-full p-2 border border-gray-300 rounded-md'
+          value={duration}
+          onChange={(e) => setDuration(e.target.value)}
+        />
       </div>
-      <button className="exercise-button" onClick={handleAddExercise}>Add Exercise</button>
-      <div className="exercise-history">
-        <h3>Exercise History</h3>
-        <ul className="exercise-list">
+      <button
+        className='bg-orange-600 hover:bg-orange-300 text-white py-2 px-4 rounded-md'
+        onClick={handleAddExercise}
+      >
+        Add Exercise
+      </button>
+      <div className='mt-8'>
+        <h3 className='text-xl font-semibold mb-4'>Exercise History</h3>
+        <ul className='divide-y divide-gray-200'>
           {exercises.map((entry, index) => (
-            <li className="exercise-list-item" key={index}>
-              Exercise: {entry.exercise}, Duration: {entry.duration} minutes
+            <li key={index} className='py-2'>
+              <span className='font-semibold'>Exercise:</span> {entry.exercise},
+              <span className='font-semibold'>Duration:</span> {entry.duration}
+              minutes
             </li>
           ))}
         </ul>

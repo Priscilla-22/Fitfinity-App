@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './ImageSlider.css';
-import data from '../../data/db.json'; 
+import data from '../../data/db.json'; // Import the entire data object
 
 const ImageSlider = () => {
   const [exerciseImages, setExerciseImages] = useState([]);
@@ -43,6 +43,7 @@ const ImageSlider = () => {
               src={image.url}
               alt={image.description}
               className='slider-image'
+              loading='lazy' // Add this attribute
             />
           </div>
         ))}

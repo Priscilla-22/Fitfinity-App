@@ -1,12 +1,14 @@
+//src/components/WorkoutPlanDetails/WorkoutPlanDetails.jsx
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import workoutPlansData from '../../data/db.json'; // Adjust the path as necessary
+import data from '../../data/db.json'; // Import the entire data object
 
 const WorkoutPlanDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const workoutPlan = workoutPlansData.find((plan) => plan.id === Number(id));
+  // Access the workoutPlans array within the data object
+  const workoutPlan = data.workoutPlans.find((plan) => plan.id === id);
 
   if (!workoutPlan) {
     return <div>Loading...</div>;

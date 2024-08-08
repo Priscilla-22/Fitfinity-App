@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import workoutPlansData from '../data/db.json'; // Adjust the path as necessary
 
 const WorkoutPlanDetails = () => {
   const { id } = useParams();
-  const [workoutPlan, setWorkoutPlan] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch(`http://localhost:3000/workoutPlans/${id}`)
-      .then((r) => r.json())
-      .then((data) => setWorkoutPlan(data));
-  }, [id]);
+  const workoutPlan = workoutPlansData.find((plan) => plan.id === Number(id));
 
   if (!workoutPlan) {
     return <div>Loading...</div>;

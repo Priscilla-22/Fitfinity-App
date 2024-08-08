@@ -1,25 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import WorkoutPlan from '../WorkoutPlans/WorkoutPlans';
 import FilterBar from '../FilterBar/FilterBar';
+import workoutPlansData from '../data/db.json'; // Adjust the path as necessary
 
 const WorkoutPlanList = () => {
-  const [workoutPlans, setWorkoutPlans] = useState([]);
   const [filters, setFilters] = useState({
     difficulty: '',
     bodyPart: '',
     equipment: '',
   });
-
-  useEffect(() => {
-    fetchWorkoutPlans();
-  }, []);
-
-  const fetchWorkoutPlans = () => {
-    fetch('http://localhost:3000/workoutPlans')
-      .then((r) => r.json())
-      .then((data) => setWorkoutPlans(data))
-      .catch((err) => console.error('Error fetching workout plans:', err));
-  };
 
   const handleFilterChange = (name, value) => {
     setFilters((prevFilters) => ({
@@ -28,7 +17,7 @@ const WorkoutPlanList = () => {
     }));
   };
 
-  const filteredWorkoutPlans = workoutPlans.filter((workoutPlan) => {
+  const filteredWorkoutPlans = workoutPlansData.filter((workoutPlan) => {
     if (
       filters.difficulty !== '' &&
       filters.difficulty !== workoutPlan.difficulty

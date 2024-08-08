@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import WorkoutPlan from '../WorkoutPlans/WorkoutPlans';
 import FilterBar from '../FilterBar/FilterBar';
-import workoutPlansData from '../data/db.json'; // Adjust the path as necessary
+import workoutPlansData from '../../data/db.json'; // Adjust the path as necessary
 
 const WorkoutPlanList = () => {
   const [filters, setFilters] = useState({

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import workoutPlansData from '../data/db.json'; // Adjust the path as necessary
+import workoutPlansData from '../../data/db.json'; // Adjust the path as necessary
 
 const WorkoutPlanDetails = () => {
   const { id } = useParams();

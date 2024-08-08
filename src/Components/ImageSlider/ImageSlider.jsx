@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './ImageSlider.css';
 import data from '../../data/db.json'; // Import the entire data object
+import LazyLoad from 'react-lazyload';
 
 const ImageSlider = () => {
   const [exerciseImages, setExerciseImages] = useState([]);
@@ -39,12 +40,13 @@ const ImageSlider = () => {
                 </span>
               ))}
             </div>
-            <img
-              src={image.url}
-              alt={image.description}
-              className='slider-image'
-              loading='lazy' // Add this attribute
-            />
+            <LazyLoad height={200} offset={100}>
+              <img
+                src={image.url}
+                alt={image.description}
+                className='slider-image'
+              />
+            </LazyLoad>
           </div>
         ))}
       </Slider>

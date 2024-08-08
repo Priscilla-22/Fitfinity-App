@@ -1,22 +1,18 @@
+// src/components/ImageSlider/ImageSlider.jsx
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './ImageSlider.css';
+import data from '../../data/db.json'; 
 
 const ImageSlider = () => {
   const [exerciseImages, setExerciseImages] = useState([]);
 
   useEffect(() => {
-    fetchExerciseImages();
+    // Initialize exercise images from the imported data
+    setExerciseImages(data.exerciseImageSet);
   }, []);
-
-  const fetchExerciseImages = () => {
-    fetch('http://localhost:3000/exerciseImageSet')
-      .then((r) => r.json())
-      .then((data) => setExerciseImages(data))
-      .catch((err) => console.error('Error fetching exercise images:', err));
-  };
 
   const settings = {
     dots: true,

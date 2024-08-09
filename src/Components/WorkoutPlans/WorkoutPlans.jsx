@@ -1,9 +1,9 @@
 //src/components/WorkoutPlans/WorkoutPlans.jsx
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-const WorkoutPlan = ({ workoutPlan }) => {
+const WorkoutPlan = memo(({ workoutPlan }) => {
   const [expanded, setExpanded] = useState(false);
   const navigate = useNavigate();
 
@@ -92,6 +92,6 @@ const WorkoutPlan = ({ workoutPlan }) => {
       </div>
     </div>
   );
-};
+})
 
 export default WorkoutPlan;

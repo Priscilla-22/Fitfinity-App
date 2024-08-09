@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import WorkoutPlan from '../WorkoutPlans/WorkoutPlans';
 import FilterBar from '../FilterBar/FilterBar';
-import data from '../../data/db.json'; 
 
 const WorkoutPlanList = () => {
   const [workoutPlans, setWorkoutPlans] = useState([]);
@@ -12,10 +11,11 @@ const WorkoutPlanList = () => {
     equipment: '',
   });
 
-  useEffect(() => {
-    // Initialize workout plans from the imported data
-    setWorkoutPlans(data.workoutPlans);
-  }, []);
+ useEffect(() => {
+   import('../../data/db.json').then((data) => {
+     setWorkoutPlans(data.workoutPlans);
+   });
+ }, []);
 
   const handleFilterChange = (name, value) => {
     setFilters((prevFilters) => ({
